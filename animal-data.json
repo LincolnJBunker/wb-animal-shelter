@@ -5,5 +5,6 @@
   { "name": "Felix", "species": "cat", "color": "orange", "hunger": 70 },
   { "name": "Cooper", "species": "dog", "color": "golden" },
   { "name": "Bo", "species": "dog", "color": "black", "hunger": 30 },
-  { "name": "Bugsy", "species": "hamster", "color": "white" }
+  { "name": "Bugsy", "species": "hamster", "color": "white" },
+  { "name": "Big Dawg", "species": "dog", "color": "chrome black", "hunger": 1000 }
 ]

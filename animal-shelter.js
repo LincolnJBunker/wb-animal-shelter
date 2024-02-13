@@ -70,9 +70,9 @@ const shelter = new AnimalShelter ()
         let animal;
         const hunger = a.hunger ? a.hunger : 50;
         if (a.species === 'cat') {
-            animal = new Cat(a.name, a.species, a.color, hunger)
+            animal = new Cat(a.name, a.color, hunger)
         } else if (a.species === 'dog') {
-            animal = new Dog(a.name, a.species, a.color, hunger)
+            animal = new Dog(a.name, a.color, hunger)
         } else {
             animal = new Animal(a.name, a.species, a.color, hunger)
             
