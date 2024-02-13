@@ -19,8 +19,8 @@ class Animal {
 }
 
 class Cat extends Animal {
-    constructor (name, color, hunger) {
-        super(name, 'cat', color, hunger)
+    constructor(name, color, hunger = 50) {
+        super(name, 'cat', color, hunger);
         this.food = 'fish'
     }
     greet() {
@@ -32,7 +32,7 @@ class Cat extends Animal {
     }
 }
 class Dog extends Animal {
-    constructor (name, color, hunger) {
+    constructor(name, color, hunger = 50) {
         super(name, 'dog', color, hunger)
         this.food = 'kibble'
     }
@@ -67,13 +67,21 @@ class AnimalShelter {
 const shelter = new AnimalShelter ()
     //loop through animalData
     for (const a of animalData) {
+        let animal;
         const hunger = a.hunger ? a.hunger : 50;
-        const animal = new Animal(a.name, a.species, a.color, hunger)
+        if (a.species === 'cat') {
+            animal = new Cat(a.name, a.species, a.color, hunger)
+        } else if (a.species === 'dog') {
+            animal = new Dog(a.name, a.species, a.color, hunger)
+        } else {
+            animal = new Animal(a.name, a.species, a.color, hunger)
+            
+        }
         shelter.addAnimal(animal)   
     }
     
-let scooby = new Dog('Scooby', 'brown')
-let puss = new Cat('Puss', 'orange')
-
-console.log(scooby)
-console.log(puss)
+for (const animal of shelter.animals) {
+    animal.greet()
+    animal.feed()
+    console.log(animal)
+}
